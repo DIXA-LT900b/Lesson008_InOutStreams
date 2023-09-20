@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Installer {
-    public static final Path INSTALL_PATH = Path.of("C:\\GameZz");
+    public static final Path INSTALL_PATH = Path.of("C:" + File.separator + "GameZz");
     private static StringBuilder installLog;
     List<String> pathList;
     String[] paths = {
@@ -13,14 +13,14 @@ public class Installer {
             "res",
             "savegames",
             "temp",
-            "src\\main",
-            "src\\test",
-            "src\\main\\Main.java",
-            "src\\main\\Utils.java",
-            "res\\drawables",
-            "res\\vectors",
-            "res\\icons",
-            "temp\\temp.txt"
+            "src" + File.separator + "main",
+            "src" + File.separator + "test",
+            "src" + File.separator + "main" + File.separator + "Main.java",
+            "src" + File.separator + "main" + File.separator + "Utils.java",
+            "res" + File.separator + "drawables",
+            "res" + File.separator + "vectors",
+            "res" + File.separator + "icons",
+            "temp" + File.separator + "temp.txt"
     };
 
     Installer(){
@@ -33,7 +33,7 @@ public class Installer {
             createSource(INSTALL_PATH.resolve(path));
         }
 
-       writeLogToFile(String.valueOf(INSTALL_PATH.resolve("temp\\temp.txt")));
+       writeLogToFile(String.valueOf(INSTALL_PATH.resolve("temp" + File.separator + "temp.txt")));
     }
 
     private void createSource(Path path) {
